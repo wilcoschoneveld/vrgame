@@ -29,6 +29,7 @@ function Box(props: any) {
 function App() {
   return (
     <Canvas>
+      <color attach="background" args={[1, 1, 1]} />
       <PerspectiveCamera makeDefault={true} position={[0, 1.5, 0]} />
       <gridHelper args={[100, 100]} />
       <ambientLight />
