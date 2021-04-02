@@ -6,7 +6,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     {
-      ...eslint({ include: 'src/**/*.+(js|jsx|ts|tsx)' }),
+      ...eslint({ include: 'src/**/*.+(ts|tsx)' }),
       enforce: 'pre'
     },
     reactRefresh()]
