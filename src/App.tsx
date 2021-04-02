@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Canvas, useFrame, advance } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import React, { useState } from "react";
 import { useXR } from "./useXR";
 
 function App() {

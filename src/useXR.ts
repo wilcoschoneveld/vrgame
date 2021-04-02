@@ -16,7 +16,7 @@ export function useXR(gl?: THREE.WebGLRenderer) {
         checkForXRSupport();
 
         return () => xr.removeEventListener("devicechange", checkForXRSupport);
-    }, []);
+    }, [xr]);
 
     const enterXR = useCallback(async () => {
         if (!gl) return;
@@ -31,7 +31,7 @@ export function useXR(gl?: THREE.WebGLRenderer) {
         // This was previously managed by @react-three/fiber vr={true}
         gl.xr.enabled = true;
         gl.setAnimationLoop((timestamp) => advance(timestamp, true));
-    }, [gl]);
+    }, [gl, xr]);
 
     return { supported, enterXR };
 }

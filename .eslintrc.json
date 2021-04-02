@@ -23,5 +23,8 @@
             "version": "detect"
         }
     },
-    "rules": {}
+    "rules": {
+        "semi": "warn",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+    }
 }
