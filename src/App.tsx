@@ -5,7 +5,7 @@ import { useXR } from "./useXR";
 
 function App() {
     const [gl, setGL] = useState<THREE.WebGLRenderer>();
-    const { supported, enterXR } = useXR(gl);
+    const { supported, enterXR } = useXR();
 
     return (
         <>
@@ -15,7 +15,9 @@ function App() {
                 <gridHelper args={[100, 100]} />
                 <ambientLight />
             </Canvas>
-            {supported && <button onClick={() => enterXR()}>START VR</button>}
+            {supported && gl && (
+                <button onClick={() => enterXR(gl)}>START VR</button>
+            )}
         </>
     );
 }
