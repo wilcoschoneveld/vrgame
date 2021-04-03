@@ -1,12 +1,17 @@
+import { render } from "@testing-library/react";
 import React from "react";
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { useXR } from "./useXR";
 
-test("adds 1 + 2 to equal 3", () => {
-    expect(1 + 2).toBe(3);
+test("should not support xr", () => {
+    let supported;
+
+    function Component() {
+        const xr = useXR();
+        supported = xr.supported;
+        return null;
+    }
+
+    render(<Component />);
+
+    expect(supported).toBe(false);
 });
-
-test("should render react", () => {
-    render(<div>test</div>);
-});
-
-export {};

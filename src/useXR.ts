@@ -6,6 +6,10 @@ export function useXR(gl?: THREE.WebGLRenderer) {
     const xr = (navigator as any).xr;
 
     useEffect(() => {
+        if (!xr) {
+            return;
+        }
+
         const checkForXRSupport = async () => {
             const supported = await xr.isSessionSupported("immersive-vr");
             setSupported(supported);
