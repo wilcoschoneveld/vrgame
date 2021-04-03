@@ -1,5 +1,6 @@
 import { act, render } from "@testing-library/react";
 import React from "react";
+import { Navigator } from "three";
 import { useXR } from "./useXR";
 
 test("should not support xr", () => {
@@ -19,10 +20,12 @@ test("should not support xr", () => {
 test("should support xr", async () => {
     const promise = Promise.resolve(true);
 
-    (navigator as any).xr = {
+    (navigator as Navigator).xr = {
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
         isSessionSupported: jest.fn(() => promise),
+        requestSession: jest.fn(),
+        dispatchEvent: jest.fn(),
     };
 
     let supported;
@@ -49,9 +52,11 @@ test("should listen to devicechange events", async () => {
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
         isSessionSupported: jest.fn(() => promise),
+        requestSession: jest.fn(),
+        dispatchEvent: jest.fn(),
     };
 
-    (navigator as any).xr = xrMock;
+    (navigator as Navigator).xr = xrMock;
 
     function Component() {
         useXR();

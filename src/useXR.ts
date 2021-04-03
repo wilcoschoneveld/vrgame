@@ -1,9 +1,10 @@
 import { advance } from "@react-three/fiber";
 import { useCallback, useEffect, useState } from "react";
+import { Navigator } from "three";
 
 export function useXR() {
     const [supported, setSupported] = useState(false);
-    const xr = (navigator as any).xr;
+    const xr = (navigator as Navigator).xr;
 
     useEffect(() => {
         if (!xr) {
@@ -24,6 +25,10 @@ export function useXR() {
 
     const enterXR = useCallback(
         async (gl: THREE.WebGLRenderer) => {
+            if (!xr) {
+                return;
+            }
+
             const session = await xr.requestSession("immersive-vr", {
                 optionalFeatures: [
                     "local-floor",
