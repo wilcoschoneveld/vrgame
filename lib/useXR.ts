@@ -2,6 +2,10 @@ import { advance } from "@react-three/fiber";
 import { useCallback, useEffect, useState } from "react";
 import { Navigator } from "three";
 
+export interface Test {
+    a: number;
+}
+
 export function useXR() {
     const [supported, setSupported] = useState(false);
     const xr = (navigator as Navigator).xr;

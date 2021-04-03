@@ -1,7 +1,7 @@
 import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { useState } from "react";
-import { useXR } from "./useXR";
+import { useXR } from "../lib";
 
 function App() {
     const [gl, setGL] = useState<THREE.WebGLRenderer>();

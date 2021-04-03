@@ -1,16 +1,25 @@
 {
-    "name": "vite-test",
+    "name": "react-three-xr",
     "version": "0.0.0",
+    "files": [
+        "dist"
+    ],
+    "module": "./dist/react-three-xr.es.js",
+    "exports": {
+        ".": {
+            "import": "./dist/react-three-xr.es.js"
+        }
+    },
     "scripts": {
         "dev": "vite --host 0.0.0.0 --https",
         "build": "tsc && vite build",
+        "build:lib": "tsc && vite build --c vite.config.lib.ts",
         "serve": "vite preview",
         "test": "jest"
     },
     "dependencies": {
         "@react-three/drei": "^4.0.2",
         "@react-three/fiber": "^6.0.3",
-        "eslint-plugin-testing-library": "^3.10.2",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
         "three": "^0.127.0"
@@ -30,6 +39,7 @@
         "eslint-plugin-jest-dom": "^3.7.0",
         "eslint-plugin-react": "^7.23.1",
         "eslint-plugin-react-hooks": "^4.2.0",
+        "eslint-plugin-testing-library": "^3.10.2",
         "jest": "^26.6.3",
         "prettier": "^2.2.1",
         "rollup": "^2.44.0",

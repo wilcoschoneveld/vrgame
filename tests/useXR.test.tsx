@@ -1,7 +1,7 @@
 import { act, render } from "@testing-library/react";
 import React from "react";
 import { Navigator } from "three";
-import { useXR } from "./useXR";
+import { useXR } from "../lib";
 
 test("should not support xr", () => {
     let supported;
