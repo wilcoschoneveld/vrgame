@@ -24,14 +24,8 @@
         }
     },
     "rules": {
-        "semi": [
-            "warn",
-            "always"
-        ],
-        "quotes": [
-            "warn",
-            "double"
-        ],
+        "semi": ["warn", "always"],
+        "quotes": ["warn", "double"],
         "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 }
