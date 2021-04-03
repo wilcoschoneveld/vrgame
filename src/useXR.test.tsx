@@ -54,7 +54,7 @@ test("should listen to devicechange events", async () => {
     (navigator as any).xr = xrMock;
 
     function Component() {
-        const xr = useXR();
+        useXR();
         return null;
     }
 
