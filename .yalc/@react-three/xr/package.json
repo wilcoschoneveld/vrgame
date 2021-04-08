@@ -1,0 +1,48 @@
+{
+  "name": "@react-three/xr",
+  "version": "3.0.1+942b9f86",
+  "description": "React components and hooks for creating VR/AR applications with react-three-fiber",
+  "keywords": [
+    "xr",
+    "ar",
+    "vr",
+    "react",
+    "three",
+    "react-three-fiber"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmndrs/react-xr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pmndrs/react-xr/issues"
+  },
+  "homepage": "https://github.com/pmndrs/react-xr#readme",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "rimraf dist && npm run typegen",
+    "build": "rollup -c",
+    "eslint": "eslint src/**/*.{js,ts,jsx,tsx}",
+    "test": "echo no tests yet",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false --strict --jsx react",
+    "typegen": "tsc && mv dist/src/* dist && rm -rf dist/src || true"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --pattern '**/*.*(js|jsx|ts|tsx)'"
+    }
+  },
+  "peerDependencies": {
+    "@react-three/fiber": ">=6.0.3",
+    "react": ">=16.13",
+    "react-dom": ">=16.13"
+  },
+  "dependencies": {
+    "react-merge-refs": "^1.1.0"
+  },
+  "yalcSig": "942b9f867ba0287611bc38dd32af1a10"
+}

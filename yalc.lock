@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@react-three/xr": {
+      "signature": "942b9f867ba0287611bc38dd32af1a10",
+      "file": true
+    }
+  }
+}
