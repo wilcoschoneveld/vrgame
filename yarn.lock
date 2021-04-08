@@ -641,6 +641,11 @@
     utility-types "^3.10.0"
     zustand "^3.3.3"
 
+"@react-three/xr@file:.yalc/@react-three/xr":
+  version "3.0.1"
+  dependencies:
+    react-merge-refs "^1.1.0"
+
 "@rollup/plugin-eslint@^8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-eslint/-/plugin-eslint-8.0.1.tgz#bf7462f96027613729b8a805caaa951dc23c333e"
