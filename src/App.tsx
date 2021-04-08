@@ -6,7 +6,7 @@ import React from "react";
 function Table() {
     return (
         <mesh position={[1, 0.5, 0]}>
-            <boxGeometry args={[0.5, 1, 2]} />
+            <boxGeometry args={[0.8, 1, 1.6]} />
             <meshStandardMaterial color={"orange"} />
         </mesh>
     );
